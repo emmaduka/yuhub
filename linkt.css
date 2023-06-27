@@ -1,0 +1,845 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    color: #5f5f5f;
+}
+a{
+    text-decoration:none ;
+    color: #5f5f5f;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding: 6px 6%;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+.logo img{
+    width: 30px;
+    margin-right: 15px;
+    display: block;
+}
+.navmid ul li{
+    display: inline-block;
+    list-style: none;
+}
+.navmid ul li a{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 5px 8px;
+    padding-right: 5px;
+    position: relative;
+}
+.navmid ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background-color: rgb(248, 33, 69);
+    position: absolute;
+    bottom: -15px;
+    transition: width 0.3s;
+}
+.navmid ul li a:hover::after,
+.navmid ul li a.activelink::after
+{
+    width: 100%;
+}
+.navmid ul li a img{
+    width: 30px;
+}
+.navright img{
+    border-radius: 50%;
+    width: 40px;
+    display: block;
+    cursor: pointer;
+    position: relative;
+}
+.online{
+    position: relative;
+}
+.online::after{
+    content: '';
+    width: 7px;
+    height: 7px;
+    border: 2px solid white;
+    border-radius: 50%;
+    right: 0;
+    top: 0;
+    background-color: green;
+    position: absolute;
+}
+.searchbox{
+    background-color: #f0f2f5;
+    width: 250px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+}
+.navleft{
+    display: flex;
+    align-items: center;
+}
+.searchbox img{
+    width: 14px;
+}
+.searchbox input{
+    width: 100%;
+    background: transparent;
+    padding: 8px;
+    outline: none;
+    border: none;
+}
+/*--------------------------------navbar end-------------------------------*/
+.container{
+    padding: 20px 6%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/*---------------leftbar------------------*/
+.leftbar{
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 70px;
+}
+.profilebox{
+    background: #fff;
+}
+.profileinfo{
+    padding: 0 25px;
+}
+.profileinfo img{
+    width:90px ;
+    height: 80px;
+    border-radius: 50%;
+    background: #fff;
+    padding: 4px;
+    margin-top: -45px;
+}
+.profileinfo h1{
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+.profileinfo h3{
+    font-size: 14px;
+    font-weight: 500;
+    color: #777;
+}
+.profileinfo ul{
+    list-style: none;
+    margin: 20px 0;
+}
+.profileinfo ul li{
+    width: 100%;
+    margin: 5px 0;
+    font-size: 13px;
+}
+.profileinfo ul li span{
+    float: right;
+    color: #045be6;
+}
+.profilelink{
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #ccc;
+}
+.profilelink a{
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    font-size: 13px;
+    border-left: 1px solid #ccc;
+}
+.profilelink a:first-child{
+    border-left: 0;
+}
+.profilelink a img{
+    width: 20px;
+    margin-right: 10px;
+}
+.activity{
+    background-color: white;
+    padding: 5px 25px;
+    margin: 12px 0;
+}
+.activity h3{
+    color: #777;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 20px 0 10px;
+}
+.activity a{
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 500;
+    color: #888;
+    margin: 3px 0;
+}
+.activity a img{
+    width: 20px;
+    margin-right: 10px;
+}
+.discovermore{
+    border-top: 1px solid #ccc;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: -25px;
+    margin-right: -25px;
+}
+.discovermore a{
+    color: #045be6;
+    display: inline-block;
+    margin: 10px 0;
+}
+
+
+/*-------------------rightbar----------------*/
+.rightbar{
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+
+.ad{
+    background: #fff;
+    padding: 15px 25px;
+    text-align: center;
+    margin: 12px 0;
+    font-size: 12px;
+}
+.adc img{
+    width: 100%; 
+}
+.adc p{
+    margin-left: 80%;
+    margin-top: -80%;
+    border: 1px solid #ccc;
+    color: grey;
+}
+.ad small{
+    float: right;
+    font-weight: 500;
+}
+.ad p{
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.ad b{
+    display: block;
+    font-weight: 500;
+    margin-top: 10px;
+}
+.adlink{
+    display: inline-block;
+    border: 1px solid #045be6;
+    border-radius: 30px;
+    padding: 5px 15px;
+    color: #045be6;
+    font-weight: 500;
+    margin: 20px auto 10px;
+}
+.useful-links{
+    padding: 15px 25px;
+    text-align: center;
+}
+.useful-links a{
+    display: inline-block;
+    font-size: 14px;
+    margin: 4px 2px;
+}
+.copyright{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    margin-top: 10px;
+    font-weight: 500;
+}
+.copyright img{
+    width: 18px;
+    margin-right: 4px;
+}
+
+
+
+/*--------------------maincontent---------------*/
+.maincontent{
+    flex-basis: 47%;
+}
+.createpost{
+    background-color: white;
+}
+.postinput{
+    padding: 10px 25px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.postinput img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.postinput input{
+    width: 100%;
+    padding: 10px 0;
+    padding-left: 10px;
+    outline: 0;
+    resize: none;
+    background: transparent;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+}
+::placeholder{
+    font-weight: 500;
+}
+.postlinks{
+    display: flex;
+    align-items: flex-start;
+}
+.postlinks li{
+    list-style: none;
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    flex-basis: 25%;
+    height: 40px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.postlinks li img{
+    width: 15px;
+    margin-right: 5px;
+}
+.postlinks li:last-child{
+    background: #045be6;
+    color: white;
+    border-top: 0;
+    border-right: 0;
+}
+.sortby{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.sortby hr{
+    flex: 1;
+    border: 0;
+    height: 1px;
+    background-color: #ccc;
+}
+.sortby p{
+    font-size: 13px;
+    padding-left: 5px;
+}
+.sortby p span{
+    font-weight: 600;
+    cursor: pointer;
+}
+.sortby p span img{
+    width: 12px;
+    margin-left: 3px;
+}
+.posts{
+    background-color: white;
+    padding: 20px 25px 5px;
+    margin: 5px 0 15px;
+}
+.posts img{
+    padding-left: -10px;
+    padding-right: -10px;
+}
+.postauthor{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+.postauthor img{
+    border-radius: 50%;
+    width: 40px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.postauthor h1{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.postauthor small{
+    display: block;
+    margin-bottom: -2px;
+}
+.posts p{
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+.post-stats{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 12px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 6px;
+}
+.post-stats div{
+    display: flex;
+    align-items: center;
+}
+.post-stats img{
+    width: 15px;
+    margin-right: -5px;
+}
+.likedby{
+    margin-left: 10px;
+}
+.postactivity{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    font-size: 14px;
+    font-weight: 500;
+}
+.postactivity div{
+    display: flex;
+    align-items: center;
+}
+.postactivity .usericon{
+    width: 22px;
+    border-radius: 50%;
+}
+.postactivity .arrowicon{
+    width: 12px;
+    margin-left: 5px;
+}
+.pal img{
+    width: 18px;
+    margin-right: 8px;
+}
+
+/*------------------profile drop down menu------------------*/
+
+.menuwrap{
+    position: absolute;
+    top: 100%;
+    right: 5%;
+    width: 320px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s;
+}
+.menuwrap.openmenu{
+    max-height: 400px;
+}
+.menu{
+    background-color: #222;
+    color: white;
+    padding: 20px;
+    margin: 10px;
+}
+.info{
+    display: flex;
+    align-items: center;
+}
+.info img{
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.info h3{
+    font-weight: 500;
+    margin-bottom: -7px;
+}
+.info a{
+    color: #c9dbf8;
+    font-size: 13px;
+}
+.menu hr{
+    border: 0;
+    height: 1px;
+    width: 100%;
+    background-color: white;
+    margin: 15px o 10px;
+}
+.menulink{
+    display: flex;
+    align-items: center;
+    color: white;
+    margin: 12px 0;
+    font-size: 14px;
+}
+.menulink p{
+    width: 100%;
+}
+.menulink img{
+    width: 35px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+/*------------------------------profile page---------------------------*/
+
+.container{
+    display: flex;
+}
+.pmain{
+    flex-basis: 73%;
+}
+.psidebar{
+    flex-basis: 25%;
+    align-self: flex-start;
+    position: sticky;
+    top: 73px;
+}
+.pcontainer{
+    background-color: white;
+}
+.pcontinner{
+    padding: 0 4% 10px;
+}
+.profile-pic{
+    width: 150px;
+    border-radius: 50%;
+    margin-top: -75px;
+    padding: 5px;
+    background: #fff;
+}
+.pcontainer h1{
+    font-size: 28px;
+    font-weight: 600;
+    color: #222;
+}
+.pcontainer b{
+    font-weight: 500;
+}
+.pcontainer p{
+    margin-top: 5px;
+}
+.pcontainer p a{
+    color: #045be6;
+    font-weight: 500;
+}
+.mc{
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+.mc img{
+    width: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.pbtn{
+    margin: 20px 0;
+}
+.pbtn a{
+    display: inline-flex;
+    align-items: center;
+    background: #e4e6eb;
+    padding: 6px 15px;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+.pbtn a img{
+    width: 18px;
+    margin-right: 5px;
+}
+.pbtn .prybtn{
+    background-color: #045be6;
+    color: white;
+}
+.pdescription{
+    background: white;
+    padding: 20px 4% 30px;
+    margin: 12px 0;
+}
+.pdescription h2{
+    color: #333;
+    margin: 10px 0 20px;
+    font-weight: 600;
+}
+.sml{
+    display: block;
+    text-align: right;
+    font-size: 15px;
+}
+.pdescrow{
+    display: flex;
+    align-items: flex-start;
+    margin: 20px 0;
+}
+.pdescrow img{
+    width: 50px;
+    margin-right: 25px;
+    margin-top: 5px;
+}
+.pdescrow div{
+    width: 100%;
+}
+.pdescrow h3{
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+.pdescrow b{
+    display: block;
+    font-weight: 500;
+    font-size: 15px;
+}
+.pdescrow p{
+    margin-top: 15px;
+}
+.pdescrow hr{
+    border: 0;
+    border-bottom: 1px solid #999;
+    margin-top: 10px;
+}
+.elink{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    font-weight: 800;
+}
+.elink img{
+    width: 20px;
+    margin-left: 8px;
+}
+.sbtn{
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 6px 18px;
+    border: 1px solid #777;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 800;
+}
+.lbtn{
+    display: inline-block;
+    margin: 10px 5px;
+    padding: 6px 18px;
+    background: #e4e6eb;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/*-----------------------side bar--------------------*/
+
+.psidebar .ad{
+    margin: 0;
+}
+.sbpeople{
+    background-color: white;
+    padding: 15px 25px;
+    margin: 12px 0;
+    font-size: 12px;
+}
+.sbpeople h3{
+    font-size: 16px;
+    font-weight: 700;
+    margin: 10px 0 20px;
+}
+.sbprow{
+    display: flex;
+    align-items:flex-start;
+    margin: 6px 0;
+}
+.sbprow img{
+    width: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-top:5px;
+}
+.sbprow h2{
+    font-weight: 500;
+    font-size: 16px;
+}
+.sbprow a{
+    display: inline-block;
+    margin: 10px 0;
+    padding: 5px 25px;
+    border: 1px solid #5f5f5f;
+    border-radius: 30px;
+    font-weight: 700;
+}
+.pfooter{
+    padding: 0 6% 30px;
+}
+.pfooter .useful-links{
+    text-align: left;
+    padding: 0;
+}
+.pfooter .copyright{
+    justify-content: flex-start;
+}
+#showMoreLink{
+    display: none;
+}
+
+
+/*-------------------------media query for small screen---------------*/
+
+
+@media only screen and (max-width:600px){
+    .searchbox{
+        background: transparent;
+        width: auto;
+        padding: 0;
+    }
+    .searchbox input{
+        width: 0;
+        padding: 0;
+    }
+    .navmid ul li a span{
+        display: none;
+    }
+    .navmid ul li a{
+        padding-right: 0;
+        margin: 5px;
+    }
+    .navprofile-img{
+        width: 30px;
+    }
+    .container{
+        padding: 15px 6px;
+    }
+    .leftba, .rightba{
+        flex-basis: 100%;
+        position: relative;
+        top: unset;
+    }
+    .maincontent{
+        flex-basis: 100%;
+    }
+    .post-stats div{
+        margin: 2px 0;
+    }
+    .pal span{
+        display: none;
+    }
+    .pal img{
+        margin-right: 0;
+    }
+    .pmain, .psidebar{
+        flex-basis: 100%;
+    }
+    .pcontainer{
+        font-size: 14px;
+    }
+    .profile-pic{
+        width: 100px;
+        margin-top: -50px;
+    }
+    .pdescription{
+        font-size: 14px;
+    }
+    #showMoreLink{
+        display: block;
+        width: fit-content;
+        margin: 10px auto;
+        cursor: pointer;
+        font-size: 14px;
+    }
+    .activity{
+        display: none;
+    }
+    .activity.open{
+        display: block;
+    }
+}
+
+/*------------------Notification page------------------------*/
+
+ .box{
+    border-radius: 30px;
+    border: solid #ebf1fa;
+}
+.boxtop{
+    background-color: white;
+    padding: 25px 18px;
+}
+
+.boxtop h4{
+    text-align: center;
+    color: black;
+    margin-bottom: 20px;
+}
+.boxtop p{
+    text-align: center;
+}
+.boxbut{
+    padding: 25px 20px;
+    background-color: #f5bebe;
+}
+.boxbut p{
+    text-align: center;
+    margin-bottom: 10px;
+}
+.boxbut a{
+    text-decoration: none;
+    color: #045be6;
+    margin-left: 70px;
+}
+.boxbut a h4{
+   margin-left: 100px;
+}
+
+
+
+.notif{
+    display: flex;
+    background-color: rgb(252, 224, 229);
+    align-items: center;
+    justify-content: center;
+    padding: 15px 5px;
+    cursor: pointer;
+}
+.notifpic img{
+    width: 75px;
+    border: 1px solid white;
+}
+.notiftext{
+    color: rgb(7, 1, 2);
+    padding-left: 5px;
+    padding-right: 10px;
+    font-weight: 300;
+}
+.dot img{
+    color: rgb(248, 33, 69);
+    width: 30px;
+}
+.notif hr{
+    color: rgb(58, 21, 21);
+    width: 2px;
+
+}
+
+@media only screen and (max-width:600px){
+    .notiftext{
+        font-size: 14px;
+    }
+    .notifpic img{
+        width: 100px;
+    }
+}
